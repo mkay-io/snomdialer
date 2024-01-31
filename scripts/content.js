@@ -1,1 +1,1 @@
-console.log("content.js loaded");
+//add features for each loaded website here

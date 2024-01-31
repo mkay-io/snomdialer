@@ -1,8 +1,21 @@
 <html>
   <body>
-    <h1>Hello Extensions</h1>
-    <button id="makeCallButton">Make Call</button>
+    <h1>Snom Dialer</h1>
 
-    <script src="scripts/makeCall.js"></script>
+    <h3 style="display: none" id="missingInfos">
+      Go to options page and set connection details.
+    </h3>
+
+    <p id="makeCallSpan">
+      <input type="tel" placeholder="Telephone Number" id="makeCallInput" />
+      <button id="makeCallButton" disabled>Make Call</button>
+    </p>
+    <p style="position: absolute">
+      <!-- style="position: absolute; bottom: 0" -->
+      made with &#10084;&#65039; by
+      <a href="https://mkay.io" target="_blank">mkay.io</a>
+    </p>
+
+    <script src="scripts/frontend.js"></script>
   </body>
 </html>
