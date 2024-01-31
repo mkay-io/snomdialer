@@ -1,11 +1,24 @@
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Snom Dialer Options</title>
+  </head>
   <body>
     <h1>Settings</h1>
 
-    <input type="text" placeholder="IP-Address" id="cfgIpPhone" />
-    <input type="text" placeholder="Protocol (http/https)" id="cfgProtocol" />
-    <input type="text" placeholder="User" id="cfgUser" />
-    <input type="password" placeholder="Password" id="cfgPassword" />
+    <label for="cfgIpPhone">IP-Address / Hostname:</label>
+    <input
+      type="text"
+      placeholder="xxx.xxx.xxx.xxx"
+      id="cfgIpPhone"
+    /><br /><br />
+    <label for="cfgProtocol">Protocol:</label>
+    <input type="text" placeholder="http/https" id="cfgProtocol" /><br /><br />
+    <label for="cfgUser">User:</label>
+    <input type="text" id="cfgUser" placeholder="1234" /><br /><br />
+    <label for="cfgPassword">Password:</label>
+    <input type="password" placeholder="12345678" id="cfgPassword" /><br />
 
     <p style="position: absolute; bottom: 0">
       made with &#10084;&#65039; by

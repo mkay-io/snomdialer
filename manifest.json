@@ -3,7 +3,7 @@
   "name": "Snom Dialer",
   "version": "1.0",
   "description": "Send call commands from tel: links to your Snom phone.",
-  "homepage_url": "https://mkay.io,",
+  "homepage_url": "https://mkay.io",
   "content_scripts": [
     {
       "matches": ["<all_urls>"],

@@ -30,7 +30,14 @@ function makeCall(phoneNumber) {
 
   //if connectionSettings are missing, abort
   chrome.storage.local.get(["connection"]).then(result => {
-    if (!result || !result.connection) {
+    if (
+      !result ||
+      !result.connection ||
+      !result.connection.cfgProtocol ||
+      !result.connection.cfgUser ||
+      !result.connection.cfgPassword ||
+      !result.connection.cfgIpPhone
+    ) {
       chrome.notifications.create("NOTFICATION_ID", {
         type: "basic",
         iconUrl: "../icons/icon48.png",
