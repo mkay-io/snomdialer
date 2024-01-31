@@ -10,26 +10,35 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
 function makeCall(phoneNumber) {
   console.log("selected phone number: " + phoneNumber);
   // replace + with 00 first, then remove all characters but numbers
-  phoneNumber = (phoneNumber + "").replace("+", "00").replace(/[^0-9]/g, "");
+  let parsedNumber = (phoneNumber + "")
+    .replace("+", "00")
+    .replace(/[^0-9]/g, "");
 
-  console.log("parsed phone number:   " + phoneNumber);
+  console.log("parsed phone number:   " + parsedNumber);
 
   //if phone number is invalid, abort
-  if (phoneNumber.length <= 0) {
-    // chrome.notifications.create("NOTFICATION_ID", {
-    //   type: "basic",
-    //   iconUrl: "phone.png",
-    //   title: "Error",
-    //   message: "Number not recognized.",
-    //   priority: 2
-    // });
+  if (parsedNumber.length <= 0) {
+    chrome.notifications.create("NOTFICATION_ID", {
+      type: "basic",
+      iconUrl: "../icons/icon48.png",
+      title: "Invalid Number",
+      message: "'" + phoneNumber + "' is not a valid phone number.",
+      priority: 2
+    });
     return;
   }
 
   //if connectionSettings are missing, abort
   chrome.storage.local.get(["connection"]).then(result => {
     if (!result || !result.connection) {
-      //notify here
+      chrome.notifications.create("NOTFICATION_ID", {
+        type: "basic",
+        iconUrl: "../icons/icon48.png",
+        title: "Credentials missing",
+        message:
+          "Please go to the extensions options page and provide credentials.",
+        priority: 2
+      });
       return;
     }
 
@@ -44,7 +53,7 @@ function makeCall(phoneNumber) {
           "@" +
           result.connection.cfgIpPhone +
           "/command.htm?number=" +
-          phoneNumber,
+          parsedNumber,
         active: false
       },
       tab => {
