@@ -13,7 +13,7 @@ A browser extension that enables click-to-call functionality for Snom IP phones 
 
 ## Setup
 
-1. Install the extension from your browser's extension store
+1. Install the extension from the [chrome web store](https://chromewebstore.google.com/detail/snom-dialer/fncinajncfppdjcjbniimggfmcepmlmf)
 2. Open the extension settings
 3. Configure the following parameters:
    - IP Address / Hostname of your Snom phone (may require port :3112)
