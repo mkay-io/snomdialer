@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Snom Dialer Options</title>
   </head>
-  <body>
+  <body style="min-height: 100vh; display: flex; flex-direction: column">
     <h1>Settings</h1>
 
     <label for="cfgIpPhone">IP-Address / Hostname:</label>
@@ -12,19 +12,48 @@
       type="text"
       placeholder="xxx.xxx.xxx.xxx"
       id="cfgIpPhone"
-    /><br />&#9888; &#65039;<i
-      >This extension uses the old snom-webinterface to initiate a call.<br />
-      You may need to add the port of the old webinterface
-      (<strong>:3112</strong>) to the ip address.</i
-    ><br /><br />
-    <label for="cfgProtocol">Protocol:</label>
-    <input type="text" placeholder="http/https" id="cfgProtocol" /><br /><br />
-    <label for="cfgUser">User:</label>
-    <input type="text" id="cfgUser" placeholder="1234" /><br /><br />
-    <label for="cfgPassword">Password:</label>
-    <input type="password" placeholder="12345678" id="cfgPassword" /><br />
+      style="max-width: 200px"
+    />
+    <p
+      style="
+        background-color: yellow;
+        color: black;
+        padding: 8px;
+        border-radius: 6px;
+        display: inline-block;
+        max-width: fit-content;
+      "
+    >
+      &#9888; &#65039;<i
+        >This extension uses the old snom-webinterface to initiate a call.<br />
+        You may need to add the port of the old webinterface
+        (<strong>:3112</strong>) to the ip address.</i
+      >
+    </p>
 
-    <p style="position: absolute; bottom: 0">
+    <label for="cfgProtocol">Protocol:</label>
+    <input
+      type="text"
+      placeholder="http/https"
+      id="cfgProtocol"
+      style="max-width: 200px"
+    /><br /><br />
+    <label for="cfgUser">User:</label>
+    <input
+      type="text"
+      id="cfgUser"
+      placeholder="1234"
+      style="max-width: 200px"
+    /><br /><br />
+    <label for="cfgPassword">Password:</label>
+    <input
+      type="password"
+      placeholder="12345678"
+      id="cfgPassword"
+      style="max-width: 200px"
+    /><br />
+
+    <p style="margin-top: auto; margin-bottom: 0; padding: 20px 0">
       made with &#10084;&#65039; by
       <a href="https://mkay.io" target="_blank">mkay.io</a>
     </p>
